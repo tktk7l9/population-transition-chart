@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import apiKey from './apiKey';
-
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -15,8 +14,10 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const API_KEY = process.env.REACT_APP_RESAS_API_KEY;
+
     fetch('https://opendata.resas-portal.go.jp/api/v1/prefectures', {
-      headers: { 'X-API-KEY': apiKey }
+      headers: { 'X-API-KEY': API_KEY }
     })
       .then(response => response.json())
       .then(res => {
@@ -25,6 +26,7 @@ class App extends Component {
   }
 
   _changeSelection(index) {
+    const API_KEY = process.env.REACT_APP_RESAS_API_KEY;
     const selected_copy = this.state.selected.slice();
     selected_copy[index] = !selected_copy[index];
 
@@ -33,7 +35,7 @@ class App extends Component {
         `https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=${index +
           1}`,
         {
-          headers: { 'X-API-KEY': apiKey }
+          headers: { 'X-API-KEY': API_KEY }
         }
       )
         .then(response => response.json())
