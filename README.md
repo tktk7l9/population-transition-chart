@@ -4,4 +4,6 @@
 - [React](https://ja.reactjs.org/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [Vercel](https://vercel.com/docs)
+- [Vercel](https://vercel.com/docs/)
+- [RESAS API](https://opendata.resas-portal.go.jp/)
+- [Highcharts](https://www.highcharts.com/)
