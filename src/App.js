@@ -39,7 +39,6 @@ class App extends Component {
         .then(response => response.json())
         .then(res => {
           let tmp = [];
-          console.log(res.result.data[0].label)
           Object.keys(res.result.data[0].data).forEach(i => {
             tmp.push(res.result.data[0].data[i].value);
           });
@@ -73,7 +72,7 @@ class App extends Component {
         style={{ margin: '5px', display: 'inline-block' }}
       >
         <input
-          type="checkbox"
+          type='checkbox'
           checked={this.state.selected[props.prefCode - 1]}
           onChange={() => this._changeSelection(props.prefCode - 1)}
         />
@@ -109,7 +108,7 @@ class App extends Component {
         max: toYear
       },
       legend: {
-        align: "right"
+        align: 'right'
       },
       plotOptions: {
         series: {
@@ -126,8 +125,17 @@ class App extends Component {
       <div>
         <h1>都道府県別の総人口推移グラフを表示するSPA</h1>
         <p>都道府県</p>
-        {Object.keys(obj).map(i => this.renderItem(obj[i]))}
-        <HighchartsReact highcharts={Highcharts} options={options} />
+        <div>
+          {Object.keys(obj).map(i => this.renderItem(obj[i]))}
+          <div
+            className='highcharts'
+          >
+            <HighchartsReact
+              highcharts={Highcharts}
+              options={options}
+            />
+          </div>
+        </div>
       </div>
     );
   }
