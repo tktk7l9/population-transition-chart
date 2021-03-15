@@ -10,6 +10,19 @@ h1 {
 div {
   font-size: 15px;
 }
+.highcharts {
+  padding-top: 10px;
+}
+
+
+@media screen and (min-width:360px) { 
+  body {
+    width: 320px;
+  }
+  h1 {
+    font-size: 15px;
+  }
+}
 
 @media screen and (min-width:480px) { 
   body {
