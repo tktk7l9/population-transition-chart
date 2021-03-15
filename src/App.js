@@ -72,11 +72,16 @@ class App extends Component {
         style={{ margin: '5px', display: 'inline-block' }}
       >
         <input
-          type='checkbox'
-          checked={this.state.selected[props.prefCode - 1]}
-          onChange={() => this._changeSelection(props.prefCode - 1)}
+            id={props.prefName}
+            type='checkbox'
+            checked={this.state.selected[props.prefCode - 1]}
+            onChange={() => this._changeSelection(props.prefCode - 1)}
         />
-        {props.prefName}
+        <label
+          htmlFor={props.prefName}
+        >
+            {props.prefName}
+        </label>
       </div>
     );
   }
@@ -123,11 +128,20 @@ class App extends Component {
     };
     return (
       <div>
-        <h1>都道府県別の総人口推移グラフを表示するSPA</h1>
+        <h1
+          id='title'
+          className='title'
+        >
+          都道府県別の総人口推移グラフを表示するSPA
+        </h1>
         <p>都道府県</p>
-        <div>
+        <div
+          id='prefectures'
+          className='prefectures'
+        >
           {Object.keys(obj).map(i => this.renderItem(obj[i]))}
           <div
+            id='highcharts'
             className='highcharts'
           >
             <HighchartsReact
