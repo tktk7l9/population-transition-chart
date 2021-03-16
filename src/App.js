@@ -12,7 +12,7 @@ class App extends Component {
     };
     this._changeSelection = this._changeSelection.bind(this);
   }
-
+  
   componentDidMount() {
 
     fetch('https://opendata.resas-portal.go.jp/api/v1/prefectures', {
