@@ -4,7 +4,6 @@
       "browser": true,
       "node": true
     },
-    "parser": "bable-eslint",
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
